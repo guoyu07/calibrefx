@@ -38,8 +38,11 @@ var CFX_Builder = CFX_Builder || {};
 				$(parent).append( html_to_copy );
 				$(parent).find('.wpa_loop-'+$(event.target).val()).removeClass('vp-hide').removeClass('vp-dep-inactive');
 
-				$('input.wp-color-picker').wpColorPicker();
-				// vp.init_select2($(parent).find('.vp-js-select2'));
+				$(parent).find('input.wp-colorpicker ').wpColorPicker();
+				$(parent).find('select.vp-js-select2').select2({allowClear: true});
+				vp.init_wpeditor($(parent).find('.vp-js-wpeditor'));
+				// vp.init_datepicker($(parent).find('.vp-js-datepicker'));
+				// vp.init_sorter($(parent).find('.vp-js-sorter'));
 				
 				return this;
 			},
