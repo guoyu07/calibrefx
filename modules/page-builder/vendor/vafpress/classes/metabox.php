@@ -567,7 +567,8 @@ class VP_Metabox extends WPAlchemy_MetaBox
 
 			$html .= '<div id="'. $g['name'] .'" class="vp-wpa-group wpa_group wpa_group-' . $name . '">';
 			$html .= '<div class="vp-wpa-group-heading"><a href="#" class="vp-wpa-group-title">' . $icon . $group['title'] . '</a></div>';
-			$html .= '<div class="vp-controls' . ((!$is_first) ? ' vp-hide' : '') . '">';
+			// $html .= '<div class="vp-controls' . ((!$is_first) ? ' vp-hide' : '') . '">';
+			$html .= '<div class="vp-controls vp-hide">';
 			$html .= '<input type="hidden" name="'.$g['name'].'[has_value]" value="1" id="'. $g['name'] .'">';
 
 			foreach ($g['childs'] as $f)
@@ -625,7 +626,8 @@ class VP_Metabox extends WPAlchemy_MetaBox
 
 			$html .= '<div id="'. $g['name'] .'" class="vp-wpa-group wpa_group wpa_group-' . $name . $class . '">';
 			$html .= '<div class="vp-wpa-group-heading"><a href="#" class="vp-wpa-group-title">' . $icon . $group['title'] . $_name . '</a><a href="#" class="dodelete vp-wpa-group-remove" title="'. __('Remove', 'vp_textdomain') .'"><i class="fa fa-times"></i> '. __('Remove', 'vp_textdomain') .'</a></div>';
-			$html .= '<div class="vp-controls' . ((!$is_first) ? ' vp-hide' : '') . '">';
+			$html .= '<div class="vp-controls vp-hide">';
+			// $html .= '<div class="vp-controls' . ((!$is_first) ? ' vp-hide' : '') . '">';
 			if ($g === end($group['groups']))
 			{
 				$tocopy = $g['name'] . '[tocopy]';
